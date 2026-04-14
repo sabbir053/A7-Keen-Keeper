@@ -1,4 +1,3 @@
-import React from 'react';
 
 const BannerPage = () => {
     return (
@@ -9,21 +8,21 @@ const BannerPage = () => {
                 <button className='btn btn-primary text-white font-bold'>+ Add Friend</button>
             </div>
             <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 py-5'>
-                <div className="border border-gray-100 bg-white shadow text-center rounded-md p-5">
-                    <h3 className='font-bold text-2xl text-green-500'>10</h3>
-                    <p className='text-gray-500'>Total Friends</p>
+                <div className="border border-gray-100 py-10 bg-white shadow text-center rounded-md p-5">
+                    <h3 className='font-bold text-5xl text-green-500'>10</h3>
+                    <p className='text-gray-500 text-lg'>Total Friends</p>
                 </div>
-                <div className="border border-gray-100 bg-white shadow text-center rounded-md p-5">
-                    <h3 className='font-bold text-2xl text-green-500'>10</h3>
-                    <p className='text-gray-500'>Total Friends</p>
+                <div className="border border-gray-100 py-10 bg-white shadow text-center rounded-md p-5">
+                    <h3 className='font-bold text-5xl text-green-500'>3</h3>
+                    <p className='text-gray-500 text-lg'>On Track</p>
                 </div>
-                <div className="border border-gray-100 bg-white shadow text-center rounded-md p-5">
-                    <h3 className='font-bold text-2xl text-green-500'>10</h3>
-                    <p className='text-gray-500'>Total Friends</p>
+                <div className="border border-gray-100 py-10 bg-white shadow text-center rounded-md p-5">
+                    <h3 className='font-bold text-5xl text-green-500'>6</h3>
+                    <p className='text-gray-500 text-lg'>Need Attention</p>
                 </div>
-                <div className="border border-gray-100 bg-white shadow text-center rounded-md p-5">
-                    <h3 className='font-bold text-2xl text-green-500'>10</h3>
-                    <p className='text-gray-500'>Total Friends</p>
+                <div className="border border-gray-100 py-10 bg-white shadow text-center rounded-md p-5">
+                    <h3 className='font-bold text-5xl text-green-500'>12</h3>
+                    <p className='text-gray-500 text-lg'>Interaction This Month</p>
                 </div>
             </div>
             <hr className='text-gray-200 mt-10'/>
