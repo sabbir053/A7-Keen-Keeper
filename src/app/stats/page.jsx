@@ -1,19 +1,16 @@
 "use client";
-
 import { useActivity } from "@/context/ActivityContext";
-import { Pie, PieChart, ResponsiveContainer, Cell, Tooltip, Legend } from 'recharts';
+import { Pie, PieChart, ResponsiveContainer, Cell, Legend } from 'recharts';
 
 const StatsPage = () => {
     const { activities } = useActivity();
 
-    // Data calculation based on context
     const statsData = [
-        { name: 'Calls', value: activities.filter(a => a.type === "call").length, fill: '#10b981' }, // Emerald
-        { name: 'Texts', value: activities.filter(a => a.type === "text").length, fill: '#3b82f6' }, // Blue
-        { name: 'Videos', value: activities.filter(a => a.type === "video").length, fill: '#8b5cf6' }, // Purple
+        { name: 'Calls', value: activities.filter(a => a.type === "call").length, fill: '#244d3f' },
+        { name: 'Texts', value: activities.filter(a => a.type === "text").length, fill: '#7e35e1' },
+        { name: 'Videos', value: activities.filter(a => a.type === "video").length, fill: '#37a163' },
     ];
 
-    // Filter out items with 0 value to keep the chart clean
     const chartData = statsData.filter(item => item.value > 0);
 
     return (
@@ -27,16 +24,16 @@ const StatsPage = () => {
                         <ResponsiveContainer width="100%" height="100%">
                             <PieChart>
                                 <Pie
-                                    data={chartData.length > 0 ? chartData : [{ name: 'Empty', value: 1, fill: '#f1f5f9' }]}
+                                    data={chartData.length > 0 ? chartData : [{ name: 'Empty', value: 1, fill: '#959595' }]}
                                     innerRadius="80%"
                                     outerRadius="100%"
-                                    cornerRadius="50%" // Your requested style
-                                    paddingAngle={8}   // Clean gap
+                                    cornerRadius="50%"
+                                    paddingAngle={8}
                                     dataKey="value"
                                     isAnimationActive={true}
                                 >
-                                    {chartData.map((entry, index) => (
-                                        <Cell key={`cell-${index}`} fill={entry.fill} />
+                                    {chartData.map((entry, i) => (
+                                        <Cell key={`cell-${i}`} fill={entry.fill} />
                                     ))}
                                 </Pie>
                                 <Legend />
