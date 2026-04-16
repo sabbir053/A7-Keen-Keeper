@@ -2,6 +2,7 @@
 import { useActivity } from '@/context/ActivityContext';
 import React from 'react';
 import { IoVideocamOutline } from 'react-icons/io5';
+import { toast } from 'react-toastify';
 
 const VideoButton = ({ friend }) => {
 
@@ -16,6 +17,9 @@ const VideoButton = ({ friend }) => {
                 month: "long",
                 day: "numeric"
             })
+        });
+        toast.success(`Video call initiated with ${friend.name}`,{
+            position: "top-center",
         });
     };
 

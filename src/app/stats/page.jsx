@@ -1,6 +1,6 @@
 "use client";
 import { useActivity } from "@/context/ActivityContext";
-import { Pie, PieChart, ResponsiveContainer, Cell, Legend } from 'recharts';
+import { Pie, PieChart, ResponsiveContainer, Cell, Legend, Tooltip } from 'recharts';
 
 const StatsPage = () => {
     const { activities } = useActivity();
@@ -36,6 +36,7 @@ const StatsPage = () => {
                                         <Cell key={`cell-${i}`} fill={entry.fill} />
                                     ))}
                                 </Pie>
+                                <Tooltip />
                                 <Legend />
                             </PieChart>
                         </ResponsiveContainer>

@@ -2,6 +2,7 @@
 import { useActivity } from '@/context/ActivityContext';
 import React from 'react';
 import { BiCommentDots } from 'react-icons/bi';
+import { toast } from 'react-toastify';
 
 const TextButton = ({ friend }) => {
 
@@ -16,6 +17,9 @@ const TextButton = ({ friend }) => {
                 month: "long",
                 day: "numeric"
             })
+        });
+        toast.success(`Text sent to ${friend.name}`,{
+            position: "top-center",
         });
     };
 

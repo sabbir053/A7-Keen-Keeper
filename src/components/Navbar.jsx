@@ -9,11 +9,11 @@ const NavbarPage = () => {
     const pathName = usePathname();
     return (
         <div className='navbar bg-base-100 shadow-sm'>
-            <div className="flex justify-between container mx-auto">
+            <div className="block md:flex lg:flex justify-between container mx-auto">
                 <Link href="/">
-                    <h2 className='font-bold text-lg'>Keen<span className='text-green-500'>Keeper</span></h2>
+                    <h2 className='font-bold text-lg text-center py-2'>Keen<span className='text-green-500'>Keeper</span></h2>
                 </Link>
-                <div className='flex space-x-5 items-center'>
+                <div className='flex space-x-5 justify-center items-center'>
                     <Link className={pathName === '/' ? 'btn btn-primary text-white' : ''} href="/">
                         <button className='font-bold flex gap-2 items-center'><RiHome2Line />Home</button>
                     </Link>
@@ -26,7 +26,6 @@ const NavbarPage = () => {
                 </div>
             </div>
         </div>
-
     );
 };
 

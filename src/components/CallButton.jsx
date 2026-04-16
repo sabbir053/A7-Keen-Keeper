@@ -2,6 +2,7 @@
 import { useActivity } from "@/context/ActivityContext";
 import React from 'react';
 import { LuPhoneCall } from "react-icons/lu";
+import { toast } from "react-toastify";
 
 const CallButton = ({ friend }) => {
     const { addActivity } = useActivity();
@@ -15,6 +16,9 @@ const CallButton = ({ friend }) => {
                 month: "long",
                 day: "numeric"
             })
+        });
+        toast.success(`Call initiated with ${friend.name}`,{
+            position: "top-center",
         });
     };
 
