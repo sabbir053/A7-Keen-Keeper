@@ -25,13 +25,10 @@ const TimelinePage = () => {
         },
     };
 
-    // --- MAIN FIX START ---
-    // Filter logic: jodi 'all' hoy sob dekhabe, na hole type match korabe
     const filteredActivities = activities.filter((item) => {
         if (filter === "all") return true;
         return item.type === filter;
     });
-    // --- MAIN FIX END ---
 
     return (
         <div className="p-6 bg-slate-50 min-h-screen">
@@ -51,7 +48,6 @@ const TimelinePage = () => {
                     </select>
                 </div>
 
-                {/* filteredActivities use korun activities er bodole */}
                 {filteredActivities.length === 0 ? (
                     <p className="text-gray-400 text-center mt-10">
                         No {filter !== "all" ? filter : ""} activity yet...
