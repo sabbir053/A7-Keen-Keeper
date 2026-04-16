@@ -17,7 +17,7 @@ const FriendsCards = ({ friends }) => {
                                     className="rounded-full mx-auto mb-4"
                                 >
                                 </Image>
-                                <h2 className='text-2xl font-bold'>{friend.name}</h2>
+                                <h2 className='text-2xl text-black font-bold'>{friend.name}</h2>
                                 <p className='text-gray-500 font-bold'>{friend.days_since_contact} days ago</p>
                                 <div className="flex gap-4 text-center justify-center py-2">
                                     {
