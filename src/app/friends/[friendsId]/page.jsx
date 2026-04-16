@@ -55,19 +55,23 @@ const FriendsDetailsPage = async ({ params }) => {
 
                 <div className="md:col-span-8 space-y-4">
 
-                    <div className="grid grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
                         <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 text-center">
                             <p className="text-3xl font-bold text-emerald-900">62</p>
                             <p className="text-lg text-slate-400 mt-1">Days Since Contact</p>
                         </div>
+
                         <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 text-center">
                             <p className="text-3xl font-bold text-emerald-900">30</p>
                             <p className="text-lg text-slate-400 mt-1">Goal (Days)</p>
                         </div>
+
                         <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 text-center">
                             <p className="text-xl font-bold text-emerald-900">Feb 27, 2026</p>
                             <p className="text-lg text-slate-400 mt-1">Next Due</p>
                         </div>
+
                     </div>
 
                     <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 relative">
