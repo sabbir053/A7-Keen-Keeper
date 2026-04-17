@@ -16,4 +16,4 @@
 
     2. Each friend has a dedicated profile page where you can see more detailed information.
     
-    3. A timeline page with filter options (text, call, video) allows you to easily track and organize your interaction history.
+    3. A timeline page with filter options (text, call, video) allows you to easily track and organize your interaction history. also add live search by name function and  added newest and oldest by date and to find shortly.
