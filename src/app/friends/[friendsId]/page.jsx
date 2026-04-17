@@ -11,7 +11,6 @@ const FriendsDetailsPage = async ({ params }) => {
     const res = await fetch('https://a7-keen-keeper-three.vercel.app/friends.json/');
     const allFriends = await res.json();
     const friend = allFriends.find(f => f.id === parseInt(friendsId));
-    console.log(friend, 'friend details');
 
     return (
         <div className="container mx-auto bg-slate-50 p-8 flex justify-center items-center font-sans text-slate-700">
@@ -77,9 +76,9 @@ const FriendsDetailsPage = async ({ params }) => {
                     <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 relative">
                         <button className="absolute top-4 right-4 text-lg bg-slate-50 border border-slate-200 px-3 py-1 rounded hover:bg-slate-100">Edit</button>
                         <h3 className="text-emerald-900 text-lg font-bold mb-2">Relationship Goal</h3>
-                        <p className="text-slate-500 text-sm">Connect every <span className="font-bold text-slate-800">30 days</span></p>
-                    </div>
-
+                        <p className="text-slate-500 text-sm">Connect every <span className="font-bold text-slate-800">{friend.goal} days</span></p>
+                    </div>   
+ 
                     <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
                         <h3 className="text-green-900 text-lg font-bold mb-4">Quick Check-In</h3>
                         <div className="grid grid-cols-3 gap-4">

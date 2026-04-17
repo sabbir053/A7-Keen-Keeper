@@ -9,6 +9,8 @@ import { useState } from "react";
 const TimelinePage = () => {
     const { activities } = useActivity();
     const [filter, setFilter] = useState("all");
+    const [sortOrder, setSortOrder] = useState("newest");
+    const [searchQuery, setSearchQuery] = useState("");
 
     const activityConfig = {
         call: {
@@ -25,35 +27,67 @@ const TimelinePage = () => {
         },
     };
 
-    const filteredActivities = activities.filter((item) => {
-        if (filter === "all") return true;
-        return item.type === filter;
-    });
+    const processedActivities = activities
+        .filter((item) => {
+            const matchesCategory = filter === "all" || item.type === filter;
+            const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase());
+            return matchesCategory && matchesSearch;
+        })
+        .sort((a, b) => {
+            const dateA = new Date(a.time);
+            const dateB = new Date(b.time);
+            return sortOrder === "newest" ? dateB - dateA : dateA - dateB;
+        });
 
     return (
         <div className="p-6 bg-slate-50 min-h-screen">
             <div className="container mx-auto">
                 <h2 className="text-2xl font-bold mb-6 text-slate-800">Timeline</h2>
 
-                <div className="mb-6">
+                <div className="mb-6 flex flex-wrap gap-4 items-center justify-center md:justify-start">
+
                     <select
                         value={filter}
                         onChange={(e) => setFilter(e.target.value)}
-                        className="px-4 py-2 border rounded-lg bg-white text-green-700 cursor-pointer"
+                        className="px-4 py-2 border border-gray-200 rounded-lg bg-white cursor-pointer shadow-md"
                     >
                         <option value="all">All Activities</option>
                         <option value="call">Call</option>
                         <option value="text">Text</option>
                         <option value="video">Video</option>
                     </select>
+
+                    <select
+                        value={sortOrder}
+                        onChange={(e) => setSortOrder(e.target.value)}
+                        className="px-4 py-2 border border-gray-200 rounded-lg bg-white cursor-pointer shadow-md"
+                    >
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                    </select>
+
+                    <div className="flex-1 min-w-62.5">
+                        <input
+                            type="text"
+                            placeholder="Search by friend's name..."
+                            value={searchQuery}
+                    
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            className="w-full px-4 py-2 border rounded-lg bg-white shadow-md"
+                        />
+                    </div>
                 </div>
 
-                {filteredActivities.length === 0 ? (
-                    <p className="text-gray-400 text-center mt-10">
-                        No {filter !== "all" ? filter : ""} activity yet...
-                    </p>
+                {processedActivities.length === 0 ? (
+                    <div className="text-center mt-10">
+                        <p className="text-gray-400">
+                            {searchQuery
+                                ? `No activities found for "${searchQuery}"`
+                                : `No ${filter !== "all" ? filter : ""} activity yet...`}
+                        </p>
+                    </div>
                 ) : (
-                    filteredActivities.map((item, index) => {
+                    processedActivities.map((item, index) => {
                         const config = activityConfig[item.type];
 
                         return (
@@ -74,7 +108,7 @@ const TimelinePage = () => {
                                         <span className="font-semibold">{item.name}</span>
                                     </p>
                                     <p className="text-gray-500 text-sm md:text-lg">
-                                        {item.time}
+                                        {new Date(item.time).toLocaleString()}
                                     </p>
                                 </div>
                             </div>

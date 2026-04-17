@@ -19,7 +19,7 @@ const StatsPage = () => {
                 <h2 className="text-3xl font-bold text-slate-800 mb-8">Friendship Analytics</h2>
 
                 <div className="border border-gray-300 rounded-lg bg-gray-50 shadow p-10">
-
+                    <h2 className="text-green-800 font-bold">By Interaction Type</h2>
                     <div className="justify-center items-center h-100 w-full">
                         <ResponsiveContainer width="100%" height="100%">
                             <PieChart>
