@@ -8,7 +8,7 @@ import VideoButton from "@/components/VideoButton";
 
 const FriendsDetailsPage = async ({ params }) => {
     const { friendsId } = await params;
-    const res = await fetch('http://localhost:3000/friends.json/');
+    const res = await fetch('https://a7-keen-keeper-three.vercel.app/friends.json/');
     const allFriends = await res.json();
     const friend = allFriends.find(f => f.id === parseInt(friendsId));
     console.log(friend, 'friend details');

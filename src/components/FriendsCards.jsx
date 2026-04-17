@@ -1,7 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const FriendsCards = ({ friends }) => {
+const FriendsCards = async () => {
+    const res = await fetch('https://a7-keen-keeper-three.vercel.app/friends.json');
+    const friends = await res.json();
+    console.log(friends);
     return (
         <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 py-5'>
             {

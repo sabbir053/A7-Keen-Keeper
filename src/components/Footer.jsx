@@ -17,16 +17,7 @@ const FooterPage = () => {
             </aside>
             <hr className="w-full border-t border-white/20 my-4 mt-8" />
             <nav>
-                {/* <div className="flex justify-between ">
-                    <p className='py-3'>© 2026 KeenKeeper. All rights reserved.</p>
-                    <div className='gap-5 flex'>
-                        <a className="link link-hover">Privacy Policy</a>
-                        <a className="link link-hover space-x-3">Terms of Service</a>
-                        <a className="link link-hover">Cookies</a>
-                    </div>
-                </div> */}
                 <div className="flex flex-col md:flex-row md:justify-between items-center text-center md:text-left gap-3">
-
                     <p className="py-3">
                         © 2026 KeenKeeper. All rights reserved.
                     </p>

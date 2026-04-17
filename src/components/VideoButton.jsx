@@ -29,9 +29,6 @@ const VideoButton = ({ friend }) => {
             <IoVideocamOutline className="font-bold text-2xl text-center" />
             <span className="block">Video</span>
         </button>
-        // <button onClick={handleVideo}>
-        //     <IoVideocamOutline className="font-bold text-2xl" /> Video
-        // </button>
     );
 };
 

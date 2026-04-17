@@ -14,8 +14,8 @@ const StatsPage = () => {
     const chartData = statsData.filter(item => item.value > 0);
 
     return (
-        <div className="container mx-auto min-h-screen p-6">
-            <div className="max-w-4xl mx-auto">
+        <div className="bg-white min-h-screen p-6">
+            <div className="max-w-4xl container mx-auto">
                 <h2 className="text-3xl font-bold text-slate-800 mb-8">Friendship Analytics</h2>
 
                 <div className="border border-gray-300 rounded-lg bg-gray-50 shadow p-10">
